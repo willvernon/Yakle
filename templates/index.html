@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Yakle</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>Welcome to Yakle!</h1>
+    <div id="score">Score: <span id="score-value">0</span> / {{ question_count }}</div>
+    <div id="quiz-container" hx-get="/question/0" hx-trigger="load" hx-target="#quiz-container">
+        Loading first question...
+    </div>
+
+</body>
+
+</html>

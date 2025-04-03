@@ -1,0 +1,14 @@
+<div>
+    {% if is_correct %}
+    <p style="color: green;">Correct!</p>
+    <script>
+        let score = parseInt(document.getElementById("score-value").innerText);
+        document.getElementById("score-value").innerText = score + 1;
+    </script>
+    {% else %}
+    <p style="color: red;">Wrong! The answer was: {{ correct_answer }}</p>
+    {% endif %}
+    <button hx-get="/question/{{ qid + 1 }}" hx-target="#quiz-container" hx-swap="outerHTML">
+        Next Question
+    </button>
+</div>

@@ -1,0 +1,8 @@
+<div>
+    <p>{{ question.text }}</p>
+    <form hx-post="/submit" hx-target="#quiz-container" hx-swap="outerHTML">
+        <input type="hidden" name="qid" value="{{ qid }}">
+        <input type="text" name="answer" placeholder="Your answer" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
